@@ -1,11 +1,13 @@
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 public class ClientCard implements Serializable  {
 	private String id;
 	private Date Make;
 	private String Model;
 	private int Year;
+	private List dateo;
 	public int getYear() {
 		return Year;
 	}

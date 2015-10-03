@@ -11,7 +11,7 @@
 <property name="email" column="EMAIL" type="string"></property>
 <property name="ddate" column="DDATE" type="date"></property>
 <list name="vin" table="CLIENTCARD">
-<key column="ID">
+<key column="ID" >
 
 </key>
 <list-index base="0"></list-index>
@@ -26,7 +26,14 @@
 <property name="Model" column="MODEL" type="string"></property>
 <property name="Year" column="YEAR" type="integer"></property>
 <property name="VIN" column="VIN" type="string"></property>
+<list name="dateo" table="LISTOFORDERS">
+<key column="ID_CARD">
+</key>
+<list-index base="0"></list-index>
+<one-to-many class="ListOfOrders"/>
 
+
+</list>
 </class>
 <class name="ListOfOrders" table="LISTOFORDERS">
 <id name="id_order" column="ID_ORDER" type="string">

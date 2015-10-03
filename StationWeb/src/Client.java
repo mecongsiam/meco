@@ -1,6 +1,7 @@
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 public class Client implements Serializable {
 	private String id;
 	private String FName;
@@ -8,6 +9,7 @@ public class Client implements Serializable {
 	private long phone;
 	private String email;
 	private Date ddate;
+	private List vin;
 	public Date getDdate() {
 		return ddate;
 	}
