@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="ClientCard" table="CLIENTCARD">
+<id name="id_card" column="ID_CARD" type="string">
+<generator class="assigned"></generator>
+</id>
+<property name="Make" column="MAKE" type="date"></property>
+<property name="Model" column="MODEL" type="string"></property>
+<property name="Year" column="YEAR" type="date"></property>
+<property name="VIN" column="VIN" type="string"></property>
+<property name="id" column="ID" type="string"></property>
+</class>
+</hibernate-mapping>

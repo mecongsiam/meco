@@ -18,5 +18,6 @@
 	<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 	<!-- mapping file -->
 	<mapping resource="Emp.hbm.xml"/>
+   
 	</session-factory>
 	</hibernate-configuration>

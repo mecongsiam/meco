@@ -1,10 +1,18 @@
 import java.io.Serializable;
+import java.util.Date;
 public class Client implements Serializable {
 	private String id;
 	private String FName;
 	private String LName;
 	private long phone;
 	private String email;
+	private Date ddate;
+	public Date getDdate() {
+		return ddate;
+	}
+	public void setDdate(Date ddate) {
+		this.ddate =ddate;
+	}
 	public Client(){}
 	public String getId() {
 		return id;
