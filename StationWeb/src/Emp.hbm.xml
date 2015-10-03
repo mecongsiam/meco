@@ -10,6 +10,13 @@
 <property name="phone" column="PHONE" type="long"></property>
 <property name="email" column="EMAIL" type="string"></property>
 <property name="ddate" column="DDATE" type="date"></property>
+<list name="vin" table="CLIENTCARD">
+<key column="ID">
+
+</key>
+<list-index base="0"></list-index>
+<one-to-many class="ClientCard"/>
+</list> 
 </class>
 <class name="ClientCard" table="CLIENTCARD">
 <id name="id_card" column="ID_CARD" type="string">
@@ -19,7 +26,7 @@
 <property name="Model" column="MODEL" type="string"></property>
 <property name="Year" column="YEAR" type="integer"></property>
 <property name="VIN" column="VIN" type="string"></property>
-<property name="id" column="ID" type="string"></property>
+
 </class>
 <class name="ListOfOrders" table="LISTOFORDERS">
 <id name="id_order" column="ID_ORDER" type="string">
