@@ -10,10 +10,15 @@
    <br>
    Order Amount : <input type="number" name="OrderAmount"/> <br/>
    <br>
-   Order Status: <input type="text" name="OrderStatus"/> <br/>
-   <br>
+   Order Status:
+<select name="OrderStatus">
+    <option value="com">Complete</option>
+    <option value="inP">In Progress</option>
+    <option value="Can">Canceled</option>
+    
+</select>
   
-    <input type="submit" value="CreateCard" /><input type="button" value="MainMenu"/>
+    <input type="button" value="CreateCard" /><input type="button" value="MainMenu"/>
     <input type="button" value="BackToClientCard"/>
 </form>
 </body>

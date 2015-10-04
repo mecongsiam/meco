@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<class name="model.Client" table="CLIENTS">
+<class name="Client" table="CLIENTS">
 <id name="id" column="ID" type="string">
 <generator class="assigned"></generator>
 </id>
@@ -9,11 +9,11 @@
 <property name="LName" column="LASTNAME" type="string"></property>
 <property name="phone" column="PHONE" type="long"></property>
 <property name="email" column="EMAIL" type="string"></property>
-<property name="ddate" column="DDATE" type="LocalDate"></property>
+<property name="ddate" column="DDATE" type="date"></property>
 <property name="address" column="ADDRESS" type="string"></property>
 
 </class>
-<class name="model.ClientCard" table="CLIENTCARD">
+<class name="ClientCard" table="CLIENTCARD">
 <id name="id_card" column="ID_CARD" type="string">
 <generator class="assigned"></generator>
 </id>
@@ -23,7 +23,7 @@
 <property name="VIN" column="VIN" type="string"></property>
 
 </class>
-<class name="model.ListOfOrders" table="LISTOFORDERS">
+<class name="ListOfOrders" table="LISTOFORDERS">
 <id name="id_order" column="ID_ORDER" type="string">
 <generator class="assigned"></generator>
 </id>

@@ -1,21 +1,37 @@
+package model;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.time.LocalDate;
 public class Client implements Serializable {
 	private String id;
 	private String FName;
 	private String LName;
 	private long phone;
 	private String email;
-	private Date ddate;
-	private List vin;
-	public Date getDdate() {
+	private LocalDate ddate;
+	public LocalDate getDdate() {
 		return ddate;
 	}
-	public void setDdate(Date ddate) {
-		this.ddate =ddate;
+	public void setDdate(LocalDate ddate) {
+		this.ddate = ddate;
 	}
+	private List vin;
+	private String address;
+	public List getVin() {
+		return vin;
+	}
+	public void setVin(List vin) {
+		this.vin = vin;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
 	public Client(){}
 	public String getId() {
 		return id;

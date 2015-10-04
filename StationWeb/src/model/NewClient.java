@@ -1,3 +1,4 @@
+package model;
 
 
 import java.io.IOException;
@@ -12,17 +13,20 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 /**
  * Servlet implementation class NewUser
  */
-public class NewUsera extends HttpServlet {
+public class NewClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NewUsera() {
+    public NewClient() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,28 +39,35 @@ public class NewUsera extends HttpServlet {
 		String fname=request.getParameter("fname");
 		String lname=request.getParameter("lname");
 		String id=request.getParameter("id");
-		Configuration cfg=new Configuration();
+		String date=request.getParameter("date");
+		String adress=request.getParameter("address");
+		int number=Integer.parseInt(request.getParameter("phone"));
+		String email=request.getParameter("email");
+        String[] datem=date.split("/");
+        LocalDate lc=LocalDate.of(Integer.parseInt(datem[2]),Integer.parseInt(datem[1]) , Integer.parseInt(datem[0]));
+        
+        Configuration cfg=new Configuration();
 		cfg.configure("Hibernate.cfg.xml");
 		SessionFactory sf=cfg.buildSessionFactory();
 		Session s=sf.openSession();
 		Transaction tx=s.beginTransaction();
+		
 		Client emp=new Client();
-		Date d=new Date();
 		emp.setId(id);
 		emp.setFName(fname);
 		emp.setLName(lname);
-		emp.setPhone(334343);
-		emp.setEmail("gav.com");
-		emp.setDdate( d);
-		emp.setAddress("gadga");
+		emp.setDdate(lc);
+		emp.setAddress(adress);
+		emp.setPhone(number);
+		emp.setEmail(email);
+		
+		
 		s.save(emp);
 		s.flush();
 		tx.commit();
 		s.close();
-	
 		
-		System.out.println("username: "+fname);
-		System.out.println("password: "+lname);
+		
 		
 		PrintWriter writer=response.getWriter();
 		
@@ -67,10 +78,14 @@ public class NewUsera extends HttpServlet {
 		//build html code
 		
 		String htmlResponse="<html>";
+		htmlResponse += "CLIENT CREATED ";
+		htmlResponse+="<h2>First Name: "+fname + "<br/>";
+		htmlResponse += "Last Name: " + lname + "</h2>";  
+		htmlResponse += "Day of birth: " + date + "</h2>";
+		htmlResponse += "Address: " + adress + "</h2>";
+		htmlResponse += "Phone: " + number + "</h2>";
+		htmlResponse += "Email: " + email + "</h2>";
 		
-		htmlResponse+="<h2>Your username is: "+fname + "<br/>";
-		htmlResponse += "Your password is: " + lname + "</h2>";  
-		htmlResponse += "Your password is: " + id + "</h2>";
         htmlResponse += "</html>";
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
