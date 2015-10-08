@@ -51,6 +51,13 @@ public class AddClient extends HttpServlet {
 		
 		String htmlResponse="<html>";
 		htmlResponse += "CLIENT CREATED ";
+		htmlResponse +=newClient.getAddress();
+		htmlResponse +=newClient.getFName() ;
+		htmlResponse +="newClient.elem2 ";
+		htmlResponse +="newClient.elem3 ";
+		htmlResponse +="newClient.elem4 ";
+		htmlResponse +="newClient.elem5 ";
+		htmlResponse +="newClient.elem6 ";
 		
         htmlResponse += "</html>";
 		response.getWriter().append("Served at: ").append(request.getContextPath());
