@@ -9,14 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
   <servlet>
     <description></description>
-    <display-name>NewClient</display-name>
-    <servlet-name>NewClient</servlet-name>
-    <servlet-class>model.NewClient</servlet-class>
+    <display-name>AddClient</display-name>
+    <servlet-name>AddClient</servlet-name>
+    <servlet-class>model.AddClient</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>NewClient</servlet-name>
-    <url-pattern>/NewClient</url-pattern>
+    <servlet-name>AddClient</servlet-name>
+    <url-pattern>/AddClient</url-pattern>
   </servlet-mapping>
 </web-app>
